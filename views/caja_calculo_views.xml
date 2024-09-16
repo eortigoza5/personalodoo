@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_caja_calculo_form" model="ir.ui.view">
+        <field name="name">caja.calculo.form</field>
+        <field name="model">caja.calculo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="entrada_actual"/>
+                        <field name="entrada_anterior"/>
+                        <field name="salida_actual"/>
+                        <field name="salida_anterior"/>
+                        <field name="ent_act_menos_ant"/>
+                        <field name="sal_act_menos_ant"/>
+                        <field name="entrada_menos_salida"/>
+                        <field name="resultadox100"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_caja_calculo_tree" model="ir.ui.view">
+        <field name="name">caja.calculo.tree</field>
+        <field name="model">caja.calculo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="entrada_actual"/>
+                <field name="entrada_anterior"/>
+                <field name="salida_actual"/>
+                <field name="salida_anterior"/>
+                <field name="ent_act_menos_ant"/>
+                <field name="sal_act_menos_ant"/>
+                <field name="entrada_menos_salida"/>
+                <field name="resultadox100"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_caja_calculo" model="ir.actions.act_window">
+        <field name="name">Cálculo de Caja</field>
+        <field name="res_model">caja.calculo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_caja_calculo" name="Cálculo de Caja" action="action_caja_calculo" parent="account.menu_finance" sequence="50"/>
+</odoo>
